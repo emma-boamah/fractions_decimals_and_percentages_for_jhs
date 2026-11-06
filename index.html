@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7ff">
+  <meta name="description" content="Interactive JHS learning tool for fractions, decimals, and percentages.">
+  <title>Fractions, Decimals &amp; Percentages — JHS Math Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">%</span><span>JHS <strong>Math Lab</strong></span></a>
+    <nav aria-label="Main navigation"><a href="#convert">Convert</a><a href="#percent">Percentages</a><a href="#practice">Practice</a></nav>
+    <span class="level-tag">JHS · Number</span>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">SAME VALUE, DIFFERENT FORM</p><h1>Fractions, decimals,<br><span>and percentages</span></h1><p>Switch between equivalent forms, compare values, and solve percentage problems with visual support.</p><a class="button primary" href="#convert">Start learning <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="hero-circle"><div class="hero-figure"><span>1/2</span><span>0.5</span><span>50%</span></div></div><div class="mini-bars"><span></span><span></span><span></span><span></span><span></span></div></div>
+    </section>
+
+    <section class="section" id="convert">
+      <div class="section-heading"><div><p class="eyebrow">01 · CONVERSIONS</p><h2>Same value, different form.</h2></div><p>Use the slider or type a fraction, decimal, or percentage. See how they match.</p></div>
+      <div class="convert-card">
+        <div class="input-panel">
+          <div class="convert-block">
+            <label for="fraction-input">Fraction</label>
+            <div class="input-row"><input id="fraction-input" type="text" value="1/2" aria-label="Fraction value"><button id="share-fraction" class="tiny-button" type="button">Use</button></div>
+          </div>
+          <div class="convert-block">
+            <label for="decimal-input">Decimal</label>
+            <div class="input-row"><input id="decimal-input" type="number" step="0.01" value="0.5" aria-label="Decimal value"><button id="share-decimal" class="tiny-button" type="button">Use</button></div>
+          </div>
+          <div class="convert-block">
+            <label for="percent-input">Percentage</label>
+            <div class="input-row"><input id="percent-input" type="number" step="1" value="50" aria-label="Percentage value"><button id="share-percent" class="tiny-button" type="button">Use</button></div>
+          </div>
+        </div>
+        <div class="visual-panel">
+          <div class="visual-box">
+            <div class="fraction-visual" aria-hidden="true">
+              <span class="fraction-piece"></span>
+              <span class="fraction-piece filled"></span>
+              <span class="fraction-piece filled"></span>
+              <span class="fraction-piece"></span>
+            </div>
+            <div class="visual-readout">
+              <span>Equivalent values</span>
+              <strong id="equivalent-summary">1/2 = 0.5 = 50%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="percent">
+      <div class="section-heading"><div><p class="eyebrow">02 · PERCENTAGE OF A NUMBER</p><h2>Find the part.</h2></div><p>Use a percentage of an amount. Think of it as “a fraction out of 100.”</p></div>
+      <div class="percent-card">
+        <div class="percent-panel">
+          <div class="mini-header"><span class="eyebrow">WORK IT OUT</span><span id="percent-question" class="percent-question">Find 25% of 80</span></div>
+          <div class="calc-box">
+            <div class="calc-row"><span class="calc-label">Percentage</span><input id="percent-slider" type="range" min="0" max="100" step="5" value="25"></div>
+            <div class="calc-row"><span class="calc-label">Amount</span><input id="amount-input" type="number" min="0" max="1000" value="80"></div>
+          </div>
+          <div class="result-box"><span>ANSWER</span><strong id="percent-result">20</strong><small id="percent-method">25% = 25/100 = 0.25, so 0.25 × 80 = 20</small></div>
+        </div>
+        <div class="explainer-panel">
+          <div class="tip-card"><strong>Quick rule</strong><p>Find 10% first, then scale up. For example, 30% of 200 is 3 × 20 = 60.</p></div>
+          <div class="tip-card"><strong>Try this</strong><p>50% is half; 25% is a quarter; 10% is one tenth. Use these to check your answer.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section practice-section" id="practice">
+      <div class="section-heading"><div><p class="eyebrow">03 · PRACTICE</p><h2>Check your understanding.</h2></div><p>Answer four questions with instant feedback and clear explanations.</p></div>
+      <div class="quiz-card">
+        <div class="quiz-progress"><span id="quiz-count">QUESTION 1 OF 4</span><div class="progress-track"><span id="progress-fill"></span></div></div>
+        <h3 id="question">Which fraction is equivalent to 0.5?</h3>
+        <div id="answers" class="answers" role="group" aria-label="Answer choices"></div>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+        <div class="quiz-footer"><span id="score">Score: 0</span><button class="button primary" id="quiz-action" type="button" disabled>Check answer</button></div>
+      </div>
+    </section>
+    <section class="finish-banner"><div><p class="eyebrow">KEEP GOING</p><h2>Everything connects.</h2><p>Fraction, decimal, and percentage are just different ways to show the same value.</p></div><a class="button light" href="#convert">Explore again <span aria-hidden="true">↑</span></a></section>
+  </main>
+  <footer><span>JHS Math Lab · Fractions, Decimals &amp; Percentages</span><span>Made for curious learners ✦</span></footer>
+</body>
+</html>
